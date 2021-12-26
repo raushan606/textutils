@@ -1,6 +1,6 @@
 # TextUtils
 
-https://github.com/raushan/textutils/workflows/node.js/badge.svg
+https://github.com/raushan/textutils/workflows/node.js.yml/badge.svg
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
