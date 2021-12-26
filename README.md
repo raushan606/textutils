@@ -1,6 +1,6 @@
 # TextUtils
 
-![CI/CD](https://github.com/raushan/textutils/workflows/node.js/badge.svg)
+![CI/CD] (https://github.com/raushan/textutils/workflows/node/badge.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
