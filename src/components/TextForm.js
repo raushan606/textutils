@@ -35,6 +35,11 @@ export default function TextForm(props) {
     element.click();
   };
 
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
+
   const handleAlternateCase = () => {
     setText(
       text
@@ -95,6 +100,12 @@ export default function TextForm(props) {
           onClick={handleAlternateCase}
         >
           aLtErNaTe TeXt
+        </button>
+        <button
+          className="btn btn-primary btn-sm mx-2 my-2"
+          onClick={handleExtraSpaces}
+        >
+          Trim Extra Spaces
         </button>
       </div>
       <div className="container my-2 border">
