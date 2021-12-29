@@ -5,11 +5,13 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase", "success");
   };
 
   const handleLowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to LowerCase", "success");
   };
 
   const handleOnChange = (event) => {
@@ -21,7 +23,7 @@ export default function TextForm(props) {
   };
 
   const handleCopyClipboard = () => {
-    alert("Text Copied to Clipboard");
+    props.showAlert("Text copied to Clipboard", "success");
   };
 
   const handleDownloadText = () => {
@@ -33,11 +35,13 @@ export default function TextForm(props) {
     element.download = "myFile.txt";
     document.body.appendChild(element);
     element.click();
+    props.showAlert("Text downloaded!!", "success");
   };
 
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra spaces trimmed", "success");
   };
 
   const handleAlternateCase = () => {
@@ -47,6 +51,7 @@ export default function TextForm(props) {
         .map((c, i) => (i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()))
         .join("")
     );
+    props.showAlert("Converted to AlternateCases", "success");
   };
 
   const [text, setText] = useState("Enter Text Here");
