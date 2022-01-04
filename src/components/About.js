@@ -1,32 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
-
-  const [btntext, setBtnText] = useState("Enable Dark Mode");
-
-  const handleDarkMode = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-        border: "2px solid white",
-      });
-      setBtnText("Enable Dark Mode");
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtnText("Enable Light Mode");
-    }
+export default function About(props) {
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "#042743",
+    backgroundColor: props.mode === "dark" ? "rgb(36 74 104)" : "white",
   };
 
   return (
-    <div className="continer" style={myStyle}>
+    <div className="continer px-3 py-3" style={myStyle}>
       <h1 className="my-4">About Us</h1>
       <div className="accordion" style={myStyle} id="accordionExample">
         <div className="accordion-item">
@@ -40,7 +21,7 @@ export default function About() {
               aria-controls="collapseOne"
               style={myStyle}
             >
-              Accordion Item #1
+              <strong>Accordion Item #1</strong>
             </button>
           </h2>
           <div
@@ -62,15 +43,6 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="container my-3">
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={handleDarkMode}
-        >
-          {btntext}
-        </button>
       </div>
     </div>
   );

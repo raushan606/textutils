@@ -126,9 +126,22 @@ export default function TextForm(props) {
       >
         <h1>Your Text Summary</h1>
         <p>
-          {text.split(" ").length} words | {text.length} characters
+          {
+            text.split(" ").filter((e) => {
+              return e.length !== 0;
+            }).length
+          }{" "}
+          words | {text.length} characters
         </p>
-        <p>{(0.08 * text.length).toFixed(1)} Minutes read.</p>
+        <p>
+          {(
+            0.08 *
+            text.split(" ").filter((e) => {
+              return e.length !== 0;
+            }).length
+          ).toFixed(1)}{" "}
+          Minutes read.
+        </p>
         <h2>Preview</h2>
         <p>
           {text.length > 0
